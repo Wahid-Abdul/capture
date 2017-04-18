@@ -1,0 +1,34 @@
+<ion-view view-title="Home">
+  <ion-content class="padding">
+        <ion-content overflow-scroll="false" >
+        <!-- Reload button -->
+        <button ng-click="revertPicture()" class="button button-energized  small icon ion-ios-reload ">Reload</button>
+        <!-- picture -->
+         <ion-toggle ng-model = "pictureBool" checked = "false" unchecked>
+          Include image? 
+        </ion-toggle>
+        <div class="list card" ng-show="pictureBool">
+          <div class="item item-image">
+              <img ng-src="{{pictureUrl}}" id="myImage">
+          </div>
+        </div>
+        <!-- Button to take picture -->
+        <div class="padding row" ng-show = "pictureBool">
+            <button ng-click="takePicture()" class="button button-full button-calm col col-100" ng-show="pictureBool" >Take a Photo</button>
+        </div>
+       <!-- Toggle button for including text -->
+        <ion-toggle ng-model = "textBool" checked = "false" >
+          Include text? 
+        </ion-toggle>
+        <div class="row">
+        <!-- Text insertion area -->
+        <textarea ng-show="textBool" style="border:2px solid blue" class="col" rows = "4"  placeholder="Enter your text here" ng-model = "myText">
+          Enter here
+        </textarea>
+        </div>
+        <!-- Send button.This is currently dummy for now -->
+        <button type="submit" class ="button button-calm button-full " style="border-radius: 4px"> SEND</button>
+       </ion-content>
+    
+  </ion-content>
+</ion-view>
