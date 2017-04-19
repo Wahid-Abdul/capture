@@ -1,6 +1,6 @@
 angular.module('starter.controllers', ['ionic','ngCordova'])
 
-.controller('HomeCtrl', function($scope,$cordovaCamera) {
+.controller('HomeCtrl', function($scope,$cordovaCamera,$ionicPopup,$timeout) {
 
    //initialize the image position with a default image 
    $scope.pictureUrl = './img/300x300.png';
@@ -41,7 +41,19 @@ angular.module('starter.controllers', ['ionic','ngCordova'])
           console.log("success")
        }
 
-    //console.log($scope.textBool);
+
+
+
+   // An alert dialog
+   $scope.showAlert = function() {
+     var alertPopup = $ionicPopup.alert({
+       title: 'Confirmation',
+       template: '<center>Your message has been sent!  </center>'
+     });
+    //  alertPopup.then(function(res) {
+    //    console.log('Thank you for not eating my delicious ice cream cone');
+    //  });
+   };
 
   
 
