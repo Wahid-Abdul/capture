@@ -1,6 +1,29 @@
 angular.module('starter.controllers', ['ionic','ngCordova'])
 
-.controller('HomeCtrl', function($scope,$cordovaCamera,$ionicPopup,$timeout) {
+.controller('HomeCtrl', function($scope,$cordovaCamera,$ionicPopup,$timeout,$http) {
+  
+   $scope.getting = function(){
+    $http.post('http://headers.jsontest.com/', data, config)
+            .success(function (data, status, headers, config) {
+                $scope.PostDataResponse = data;
+                console.log($scope.PostDataResponse);
+            })
+            .error(function (data, status, header, config) {
+                $scope.ResponseDetails = "Data: " + data +
+                    "<hr />status: " + status +
+                    "<hr />headers: " + header +
+                    "<hr />config: " + config;
+            });   }
+
+    $scope.CallNumber = function(){ 
+        var number = '9894250259' ; 
+        window.plugins.CallNumber.callNumber(function(){
+        //success logic goes here
+        }, function(){
+        //error logic goes here
+        }, number) 
+    };        
+
 
    //initialize the image position with a default image 
    $scope.pictureUrl = './img/300x300.png';
@@ -80,6 +103,7 @@ angular.module('starter.controllers', ['ionic','ngCordova'])
 
    // An alert dialog
    $scope.showAlert = function() {
+     $scope.valueee = 92929;
      var alertPopup = $ionicPopup.alert({
        title: 'Confirmation',
        template: '<center>Your message has been sent!  </center>'

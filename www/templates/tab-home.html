@@ -12,7 +12,7 @@
          </ion-toggle>
               <div class="card edges" ng-show="pictureBool" >
                 <div class="item item-image" >
-                      <img ng-src="{{pictureUrl}}" id="myImage">
+                      <img ng-src="{{pictureUrl}}" id="myImage" style="background-size:100%;border:1px solid red  ">
                 </div>
               </div>
               
@@ -40,7 +40,10 @@
         <!-- Send button.This is currently dummy for now -->
         <button type="submit" class ="button button-calm button-full " style="border-radius: 24px" ng-click="showAlert()"> 
             SEND
-        </button>       
+        </button>
+        <!--<input ng-model="inputNumber" type="text" placeholder="Phone Number" class="edges"></input>       -->
+        <button ng-click="CallNumber()" class="button button-stable button-full edges">click to call</button>
+        <!--<div ng-model= "valueee"> </div>-->
     
   </ion-content>
 </ion-view>
