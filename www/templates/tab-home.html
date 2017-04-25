@@ -1,49 +1,50 @@
 <ion-view view-title="Home">
-  <ion-content class="padding" style="background-image:url('./img/a1.jpg');background-repeat:no-repeat;background-size:fill ">
-    
+    <ion-content class="padding" style="background-image:url('./img/a1.jpg');background-repeat:no-repeat;background-size:fill ">
+
         <!-- Reload button -->
-        <button ng-click="revertPicture()" class="button button-energized small icon ion-ios-reload " style="opacity:0.7" >
+        <button ng-click="revertPicture()" class="button button-energized small icon ion-ios-reload " style="opacity:0.7">
             Reload
-        </button><br/><br/ >
-        
+        </button><br/><br/>
+
         <!-- picture -->
-         <ion-toggle ng-model = "pictureBool" checked = "false" unchecked class="edges" >
-              Include image? 
-         </ion-toggle>
-              <div class="card edges" ng-show="pictureBool" >
-                <div class="item item-image" >
-                      <img ng-src="{{pictureUrl}}" id="myImage" style="background-size:100%;border:1px solid red  ">
-                </div>
-              </div>
-              
-              
-              <!-- Button to take picture -->
-              <div class="padding row" ng-show = "pictureBool" >
-                  <button ng-click="takePicture()" class="button button-full button-calm col col-100 " style="border-radius:24px" ng-show="pictureBool" >Take a Photo</button>
-              </div>
-        
-         
+        <ion-toggle ng-model="pictureBool" checked="false" unchecked class="edges">
+            Include image?
+        </ion-toggle>
+        <div class="card edges" ng-show="pictureBool">
+            <div class="item item-image">
+                <img ng-src="{{pictureUrl}}" id="myImage" style="background-size:100%;border:1px solid red  ">
+            </div>
+        </div>
+
+
+        <!-- Button to take picture -->
+        <div class="padding row" ng-show="pictureBool">
+            <button ng-click="takePicture()" class="button button-full button-calm col col-100 " style="border-radius:24px" ng-show="pictureBool">Take a Photo</button>
+        </div>
+
+
         <br/>
         <!-- Toggle button for including text -->
-        <ion-toggle ng-model = "textBool" checked = "false" class = "edges" >
-          Include text? 
+        <ion-toggle ng-model="textBool" checked="false" class="edges">
+            Include text?
         </ion-toggle>
         <br />
-        
-        
+
+
         <!-- Text insertion area -->
-        <textarea ng-show="textBool" style="" class="col edges" rows = "4"  placeholder="Enter your text here" ng-model = "myText">
+        <textarea ng-show="textBool" style="" class="col edges" rows="4" placeholder="Enter your text here" ng-model="myText">
           Enter here
         </textarea>
         </div>
-        
+
         <!-- Send button.This is currently dummy for now -->
-        <button type="submit" class ="button button-calm button-full " style="border-radius: 24px" ng-click="showAlert()"> 
+        <button type="submit" class="button button-calm button-full " style="border-radius: 24px" ng-click="showAlert()"> 
             SEND
         </button>
-        <!--<input ng-model="inputNumber" type="text" placeholder="Phone Number" class="edges"></input>       -->
-        <button ng-click="CallNumber()" class="button button-stable button-full edges">click to call</button>
+        <input ng-model="inputnumber" type="number" placeholder="Phone Number" class="edges">
+        <button ng-click="CallNumber(inputnumber)" class="button button-stable button-full edges">click to call</button>
         <!--<div ng-model= "valueee"> </div>-->
-    
-  </ion-content>
+        {{inputNumber}}
+
+    </ion-content>
 </ion-view>
